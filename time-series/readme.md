@@ -1,4 +1,4 @@
-# Explainability
+# Time Series
 
 In this directory, you will find tools and tutorials for time series forecasting and analysis.
 
