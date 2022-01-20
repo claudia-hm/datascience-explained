@@ -1,4 +1,4 @@
-# Data Science Explained :bar_chart: :test_tube:
+# Data Science Explained :bar_chart: :test_tube: :woman_teacher:
 
 Welcome to this repo, a hotchpoch of data science! Here you will find:
 * Common algorithms coded from scratch
