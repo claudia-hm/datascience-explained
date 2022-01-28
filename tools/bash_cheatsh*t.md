@@ -7,3 +7,7 @@ The goal of this tutorial is not to teach Bash, but to summarize those commands 
 ## Managing files
 * ``` rsync ```: transferring files from/to a remote server. Example:
 ``` rsync -avzP <source_localfile_or_localdir> <username>@<server.com>:<destination_path> ``` , where ```a``` specifies archive mode, ```v``` verbose, ```z``` stands for "compress file data during the transfer" and ```P``` forces to keep partially transferred files. The first argument is the source and the second the destination, and this command works in both directions as long as you have configured both ways the ssh keys.
+
+## Editing files
+* ``` sed ```: find and replace. Example:
+``` sed -i 's/<pattern1>/<pattern2>/g' <file> ```. This command replaces all ocurrences of <pattern1> by <pattern2> in <file> and updates the file (```-i````).
