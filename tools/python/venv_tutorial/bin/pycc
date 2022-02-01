@@ -1,3 +1,0 @@
-#!/home/claudia/Documents/GitHub/datascience-explained/tools/python/venv_tutorial/bin/python
-from numba.pycc import main
-main()
