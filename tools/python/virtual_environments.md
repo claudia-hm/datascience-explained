@@ -11,5 +11,7 @@ After creating your virtual environment you need to activate it before working o
 ## Installing dependencies
 Now, you can install all the required dependencies for your project using ```pip```. For example ```pip install sktime==0.5.3```. This library will be placed inside your virtual dependency folder <name> and will be isolated from your system python.
   
+:bulb: **Tip**: you can list all the required packages in a ```requirements.txt``` file, such as the one in this folder and install them all at once with the command ```pip install -r requirements.txt```. Also, if you have already installed some packages in your virtual environment and you want to save to a file all the versions that you are using, you can do ```pip freeze > requirements.txt``` so that next time you can install them directly.
+  
 ## Deactivating your virtual environment
   You can exit your virtual environment by typing ```deactivate```.
