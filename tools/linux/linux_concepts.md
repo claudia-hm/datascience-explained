@@ -1,4 +1,8 @@
-# Linux concepts 
+<h1 align="center">
+   <img src="https://i.pinimg.com/originals/c7/b8/11/c7b8113247fecd83bd9b5ed5bd3f34d5.png" width="100"> <br>
+   Linux concepts 
+</h1> 
+
 ## Definitions
 * **Interactive shell**: interactive shells read commands from user input. Usually, they read a set of files on activation, display a prompt and enable job control. 
 * **Non-interactive shells**: these shells do not allow user interaction. They are often run from scripts. Init and startup scripts are necessarily non-interactive, since they must run without human intervention. Many administrative and system maintenance scripts are likewise non-interactive. 
