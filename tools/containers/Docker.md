@@ -1,4 +1,7 @@
-## Docker
+<h1 align="center">
+   <img src="https://www.docker.com/sites/default/files/d8/2019-07/Moby-logo.png" width="100"> <br>
+   Docker 
+</h1> 
 
 ### Basic concepts
 
