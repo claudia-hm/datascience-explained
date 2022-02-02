@@ -1,4 +1,7 @@
-# Basic tutorial for building singularity containers
+<h1 align="center">
+   <img src="https://sylabs.io/guides/3.1/user-guide/_static/logo.png" width="100"> <br>
+   Basic tutorial for building singularity containers 
+</h1> 
 
 ## Basic definitions
 ### The ```build``` command
