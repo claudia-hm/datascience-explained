@@ -1,4 +1,4 @@
-# Python Virtual Environments
+# Python Virtual Environments <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png" width="30">
 A virtual environment is a Python environment such that the **Python interpreter**, **libraries** and **scripts** installed into it are **isolated** from those installed in other virtual environments, and (by default) any libraries installed in a “system” Python, i.e., one which is installed as part of your operating system.
 Virtual environments are specially useful when you want to work with **different versions of libraries**, or when you are **collaborating with people** and you have to specify the requirements so that your code works.
 
