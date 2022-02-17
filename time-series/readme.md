@@ -9,5 +9,5 @@ Wishlist :woman_technologist: :star2: :
 - [ ] From regression to forecast. ML methods.
 - [ ] Deep Learning for time series
 - [x] Uncertanty
-- [ ] Time Series libraries
+- [ ] Time Series libraries: pmdarima is started
 - [ ] Statistical tests
