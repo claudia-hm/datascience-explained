@@ -1,4 +1,6 @@
 import numpy as np
+from scipy.optimize import minimize
+
 
 def mae(y, y_hat):
     return np.mean(np.abs(y - y_hat))
@@ -72,3 +74,52 @@ def pearson_corr(y, y_hat):
         return "Indetermined correlation"
     else:
         return num / denom
+    
+class SES:
+    @staticmethod
+    def SSE_loss(x, *args):
+        y_train, alpha, l0 = args[0], args[1], args[2]
+        if l0==None and alpha==None:
+            l0, alpha = x[0], x[1]
+        elif l0!=None and alpha==None: 
+            alpha=x[0]
+        elif l0==None and alpha!=None:
+            l0=x[0]
+        addition = 0
+        T = len(y_train)
+        for t in range(2,T+1): #reaches T+1
+            a = y_train[t-1]
+            b = np.sum(alpha*np.power(1-alpha, np.arange(0,t-1, 1))*y_train[:t-1].values[::-1])
+            c = np.power(1-alpha, t-1)*l0
+            addition = addition + np.square(a-b-c)
+        return addition
+
+    def fit(self, y_train, alpha = None, l0=None):
+        self.y_train = y_train
+        arguments = (y_train, alpha, l0)
+        if alpha == None and l0==None:
+            x0 = [1,1]
+            bnds = ((None, None), (0,1))
+            res = minimize(self.SSE_loss, x0,args = arguments, bounds=bnds, options={'gtol': 1e-4})
+            self.l0, self.alpha = res.x
+        elif alpha!=None and l0==None:
+            self.alpha = alpha
+            x0 = [1]
+            res = minimize(self.SSE_loss, x0,args = arguments, options={'gtol': 1e-4})
+            self.l0 = res.x
+        elif alpha==None and l0!=None:
+            self.l0 = l0
+            x0 = [1]
+            res = minimize(self.SSE_loss, x0,args = arguments, options={'gtol': 1e-4})
+            self.alpha = res.x
+        elif alpha != None and l0 != None:
+            self.alpha = alpha
+            self.l0 = l0
+        else:
+            print("Either optimize parameters or specify desired alpha and initial level")
+        return self
+    def predict(self, fh):
+        T = len(self.y_train)
+        js = np.arange(0,T)
+        return np.repeat(np.sum(self.alpha*np.power(1-self.alpha, js)*self.y_train[::-1])+np.power((1-self.alpha), T)*self.l0, fh)
+
