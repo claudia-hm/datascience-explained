@@ -15,3 +15,11 @@ Now, you can install all the required dependencies for your project using ```pip
   
 ## Deactivating your virtual environment
   You can exit your virtual environment by typing ```deactivate```.
+
+  
+## Bonus: using a virtual environment as kernel for Jupyter notebook
+  1. Create (```virtualenv <name>```) and activate (```source <name>/bin/activate```) your virtual environment. 
+  2. Install all the required packages
+  3. Create jupyter kernel from your virtual environment with the command ```ipython kernel install --user --name=<name>```
+  4. Open Jupyter as usual, and change your kernel to ```<name>```
+  5. To delete your new kernel use ```jupyter-kernelspec uninstall <name>```
